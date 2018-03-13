@@ -34,7 +34,7 @@ func TestOpen(t *testing.T) {
 	path, _ := filepath.Abs("t/f1.txt")
 	nf, err := a.Open(path, 0, nil)
 	file, er2 := os.Open(path)
-	if nodefs.NewLoopbackFile(file).String() != nf.String() || er2 != nil || err != fuse.OK {
+	if nodefs.NewReadOnlyFile(nodefs.NewLoopbackFile(file)).String() != nf.String() || er2 != nil || err != fuse.OK {
 		t.Error("Wrong")
 	}
 }
