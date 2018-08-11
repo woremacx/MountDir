@@ -22,6 +22,6 @@ test: deps
 	go test ./dirtodir
 
 clean:
-	rm -rf deps-stamp setup-stamp vendor hashupfs
+	rm -rf deps-stamp setup-stamp vendor MountDir
 
 .PHONY: setup deps cleandeps build
