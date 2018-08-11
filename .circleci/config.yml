@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.10.3
+
+    working_directory: /go/src/github.com/woremacx/MountDir
+
+    steps:
+      - checkout
+
+      - run: make fmt
+      - run: script/verify_no_fmt_diffs.sh
+
+      - run: make deps
+      - run: make test
+      - run: make build
+
+# https://circleci.com/docs/2.0/language-go/
+# https://raw.githubusercontent.com/CircleCI-Public/circleci-demo-go/master/.circleci/config.yml
