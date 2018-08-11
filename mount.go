@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/woremacx/MountDir/dirtodir"
 	"flag"
 	"fmt"
+
+	"github.com/woremacx/MountDir/dirtodir"
 )
 
 func main() {
