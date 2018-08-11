@@ -1,7 +1,7 @@
 package main
 
 import (
-	"dirtodir"
+	"github.com/woremacx/MountDir/dirtodir"
 	"flag"
 	"fmt"
 )
