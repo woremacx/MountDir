@@ -49,7 +49,7 @@ func (fs *lbFS) OpenDir(name string, context *fuse.Context) (stream []fuse.DirEn
 	}
 	want := 50
 	output := make([]fuse.DirEntry, 0, want)
-	infos, err := f.Readdir(want)
+	infos, err := f.Readdir(0) // get all
 	for i := range infos {
 		n := infos[i].Name()
 		d := fuse.DirEntry{
